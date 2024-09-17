@@ -35,6 +35,9 @@
             <a class="navbar-brand" href="#">
                 <img src="logo-nixautos-v5.png" alt="Logo">
             </a>
+            <button class="btn btn-info ml-auto" id="btn-suporte-tecnico">
+            	<i class="fa-solid fa-headset"></i> Suporte Técnico
+        	</button>
         </div>
     </nav>
 
@@ -62,62 +65,206 @@
 	        	<!-- BARRA DE PESQUISA DO ESTOQUE -->
 				<div id="pesquisa">
 				    <!-- FORMULÁRIO DA PESQUISA-->
-				    <form method="GET" id="form-pesquisa" class="form-inline p-3 border border-danger">
-				        <input type="text" class="form-control col-10 col-lg-10" id="barra-pesquisa">
-				        <span class="btn btn-warning mx-1" id="btn-xmark">
+				    <form method="GET" id="form-pesquisa" class="form-inline">
+				        <input type="text" class="form-control" id="barra-pesquisa">
+				        <span class="btn btn-warning mx-2 rounded" id="btn-xmark">
 				        	<i class="fa-solid fa-xmark ml-1" id="icone-xmark"></i>
 				        </span>
-				        <span class="btn btn-primary mx-1" id="btn-pesquisar">
+				        <span class="btn btn-primary mx-2 rounded" id="btn-pesquisar">
 				            <i class="fa-solid fa-magnifying-glass ml-1" id="icone-pesquisa"></i>
 				        </span>
 				        
 				        <!-- Script da barra de pesquisa -->
 				        <script type="text/javascript">
-				            $(document).ready(function() {
-				                $("#barra-pesquisa").on("keyup", function() {
-				                    var pesquisa = $('#barra-pesquisa').val();
-				                    
-				                    // Verifica o comprimento do texto na barra de pesquisa
-				                    if (pesquisa.length > 0) {
-				                        // Se houver texto, altera para o ícone de 'x' (limpar)
-				                        $("#btn-xmark").show();
-				                        
-				                    } else {
-				                        // Se não houver texto, volta para o ícone de lupa
-				                        $("#btn-xmark").show();;
-				                    }
-				                });
-
-				                $('#icone-pesquisa').on('click',function(){
-				                	//apagar a barra de pesquisa
-				                	$("#barra-pesquisa").val('');
-			                	});
-				            });
-				        </script>
+						    $(document).ready(function() {
+						        // Evento ao clicar no botão 'x' (limpar)
+						        $("#btn-xmark").on('click', function() {
+						            // Limpa a barra de pesquisa
+						            $("#barra-pesquisa").val('');
+						        });
+						    });
+						</script>
 				    </form>
 				</div>
 
 				<!-- CARDS COM ESTOQUE -->
-	            <div class="col-12 w-100">
-	                <div class="card">
-	                    <div class="card-body">
-	                        <h5 class="card-title">Card 2</h5>
-	                        <p class="card-text">Outra descrição aqui.</p>
+				<div class="cards-container p-1">
+				    <div class="card p-2 my-2">
+				        <h3 class="p-0 m-0">Card 1</h3>
+				        <!-- CAROUSEL BOOTSTRAP -->
+            			<div id="carousel" class="carousel slide m-0" data-ride="carousel">
+            				<div class="carousel-inner">
+            					<div class="carousel-item active">
+            						
+            						<!-- IMG DO CARROUSSEL -->
+            			            <img src="carro-teste.jpg" class="img img-fluid rounded" alt="IMG DO VEÍCULO" width="400" height="300">
+            					</div>
+            					<div class="carousel-item ">
+            						
+            						<!-- IMG DO CARROUSSEL -->
+            			            <img src="carro-teste.jpg" class="img img-fluid rounded" alt="IMG DO VEÍCULO" width="400" height="300">
+            					</div>
+            					<a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+								    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+								    <span class="sr-only">Previous</span>
+								</a>
+
+								<a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+								    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+								    <span class="sr-only">Next</span>
+								</a>
+            				</div>
+            				
+            			</div>
+            			<!-- FINAL CAROUSEL -->
+						<!-- INFO VEICULO ESTOQUE -->
+            			<div id="info-veiculo-estoque" class="p-1 mt-1">
+							<div class="my-3 ">
+		                        <span class='bg-warning rounded p-1 mr-1 font-weight-bold'>Id</span>
+		                        <span class=" info-veiculo">{{veiculo.pk}}</span>
+		                    </div>
+
+		                    <div class="my-3">
+		                        <span class='bg-warning rounded p-1 mr-1 font-weight-bold'>Marca</span>
+		                        <span class=" info-veiculo"> {{veiculo.nome_marca}}</span>
+		                    </div>
+
+		                    <div class="my-3">
+		                        <span class='bg-warning rounded p-1 mr-1 font-weight-bold'>Modelo</span>
+		                        <span class=" info-veiculo">{{veiculo.nome_modelo}}</span>
+		                    </div>
+
+		                    <div class="my-3">
+		                        <span class='bg-warning rounded p-1 mr-1 font-weight-bold'>Ano</span>
+		                        <span class=" info-veiculo">{{veiculo.ano}}</span>
+		                    </div>
+
+		                    <div class="my-3">
+		                        <span class='bg-warning rounded p-1 mr-1 font-weight-bold'>Cor</span>
+		                        <span class=" info-veiculo">{{veiculo.cor}}</span>
+		                    </div>
+
+		                    <div class="my-3">
+		                        <span class='bg-warning rounded p-1 mr-1 font-weight-bold'>Portas</span>
+		                        <span class=" info-veiculo">{{veiculo.portas}}</span>
+		                    </div>
+
+		                    <div class="my-3">
+		                        <span class='bg-warning rounded p-1 mr-1 font-weight-bold'>Valor</span>
+		                        <span class=" info-veiculo">R${{veiculo.valor}}</span>
+		                    </div>
+
+		                    <div class="my-3">
+		                        <span class='bg-warning rounded p-1 mr-1 font-weight-bold'>Anunciado em</span>
+		                        <span class=" info-veiculo">{{veiculo.data}}</span>
+		                    </div>
 	                    </div>
-	                </div>
-	            </div>
-	            <div class="col-12">
-	                <div class="card">
-	                    <div class="card-body">
-	                        <h5 class="card-title">Card 3</h5>
-	                        <p class="card-text">Mais uma descrição aqui.</p>
+            			<!-- INFO VEICULO ESTOQUE -->
+
+	                    <!-- BLOCO AUXILIAR -->
+	                    <div id="bloco-auxiliar">
+	                    	<!-- DESCRIÇÃO VEICULO -->
+	                    	<div id="descricao-veiculo">
+	                    		<span class='bg-warning rounded p-1 mr-1 font-weight-bold'>Descrição</span>
+	                    		<div id="display-descricao" class="border border-light rounded p-2" disabled>
+	                    			<ul>
+	                    				<li>{{veiculo.descricao}}</li>
+	                    				<li>{{veiculo.descricao}}</li>
+	                    				<li>{{veiculo.descricao}}</li>
+	                    				<li>{{veiculo.descricao}}</li>
+	                    				<li>{{veiculo.descricao}}</li>
+	                    				<li>{{veiculo.descricao}}</li>
+	                    				<li>{{veiculo.descricao}}</li>
+	                    				<li>{{veiculo.descricao}}</li>
+	                    				<li>{{veiculo.descricao}}</li>
+	                    				<li>{{veiculo.descricao}}</li>
+	                    				<li>{{veiculo.descricao}}</li>
+	                    				<li>{{veiculo.descricao}}</li>
+	                    				<li>{{veiculo.descricao}}</li>
+	                    				<li>{{veiculo.descricao}}</li>
+	                    				<li>{{veiculo.descricao}}</li>
+	                    				<li>{{veiculo.descricao}}</li>
+	                    			</ul>
+	                    		</div>
+	                    	</div>
+	                    	<!--  FINAL BLOCO AUXILIAR -->	
 	                    </div>
-	                </div>
-	            </div>
-	        </div>
+
+	                    <!-- BTN AUXILIARES -->
+	                    	<div id="btn-auxiliares" >
+								<div class="my-3" id="link-acesso-lp">
+			                        <span class='bg-warning rounded  font-weight-bold p-2'>Link da LP</span>
+			                        <div  class="link-lp-{{veiculo.pk}} pt-1  info-veiculo">http://www.laemcasaveiculos.com.br/{{veiculo.pk}}/{{veiculo.slug}}/aaaaaaaaaaaa/3131321Saaaaaaaaaaaaaaa</div>
+			                        	<!-- BTN COPIAR -->
+		                            <button id="botao-copiar-{{veiculo.pk}}" class="  btn-sm btn-warning rounded botao-copiar " >Copiar Link</button>
+		                            <button href="http://laemcasaveiculos.com.br/{{veiculo.pk}}/{{veiculo.slug}}/" target="_blank" id="botao-acessar-lp" class=" p-1 btn-sm btn-warning rounded m-3 " >Acessar LP</button>
+		                            <script>
+			                        document.addEventListener("DOMContentLoaded", function() {
+			                            const botaoCopiar = document.getElementById("botao-copiar-{{veiculo.pk}}");
+			                            const linkDiv = document.querySelector(".link-lp-{{veiculo.pk}}");
+
+			                            botaoCopiar.addEventListener("click", function() {
+			                                const elementoTemp = document.createElement("textarea");
+			                                elementoTemp.value = linkDiv.textContent;
+			                                document.body.appendChild(elementoTemp);
+			                                elementoTemp.select();
+
+			                                try {
+			                                    document.execCommand("copy");
+			                                    alert("Link copiado para a área de transferência!");
+			                                } catch (err) {
+			                                    alert("Não foi possível copiar o link.");
+			                                }
+
+			                                document.body.removeChild(elementoTemp);
+			                            });
+			                        });
+			                    </script>
+
+			                    </div>	
+	                 		<!-- FINAL BTN AUXILIARES --> 
+		                    </div>
+
+		                    <!-- BTN DELETAR E EDITAR -->
+		                    <div id="btn-auxiliares-2">
+		                    	<button id="editar-veiculo" class="btn btn-outline-primary ">Editar</button>
+	       
+                 				<form method="POST" action="" id="form-deletar" class="m-0 p-0">
+	                              	<!--{% csrf_token %}-->
+	                               <button id="deletar-{{veiculo.pk}}" class="btn btn-danger deletar-veiculo ">Deletar</button>
+	                            </form>
+		                    	
+		                    </div>
+
+
+		                    
+		                    
+			   
+
+				    </div>
+				    <div class="card p-1 my-2">
+				        <h3>Card 2</h3>
+				        <p>Conteúdo do card 2</p>
+				    </div>
+				    <div class="card p-1 my-2">
+				        <h3>Card 3</h3>
+				        <p>Conteúdo do card 3</p>
+				    </div>
+				</div>
+	            
+
+
 	    </div>
 	<!-- FINAL CONTAINER -->
 	</div>
+
+	<!-- Footer -->
+    <footer class="footer bg-dark text-white mt-auto py-3">
+        <div class="container text-center">
+            <span>&copy; 2024 Nix Autos - Todos os direitos reservados.</span>
+            <div>Desenvolvido por Antherus - <i class="fa-brands fa-whatsapp"></i>(16)993379492</div>
+        </div>
+    </footer>
 
     <!-- Bootstrap JS e jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

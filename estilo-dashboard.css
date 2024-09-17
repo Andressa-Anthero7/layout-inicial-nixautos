@@ -1,10 +1,6 @@
-*{
-    margin:0;
+* {
+    margin: 0;
     padding: 0;
-}
-
-#btn-xmark{
-    display: none;
 }
 
 /* Estilos para o corpo */
@@ -13,6 +9,7 @@ body {
     font-weight: 700;
     margin: 0;
     padding: 0;
+    background: lavender;
 }
 
 /* Barra superior */
@@ -24,8 +21,6 @@ body {
 .navbar img {
     height: 40px;
 }
-
-
 
 /* Estilos para o menu lateral */
 .sidebar {
@@ -47,13 +42,10 @@ body {
     font-weight: bold;
 }
 
-/* transferir para o javascript o cs abaixo obre uma funcao hover */
-
-.sidebar p{
+/* Transferir para o javascript o css abaixo sobre uma função hover */
+.sidebar p {
     display: none;
 }
-
-
 
 /* Estilos para o conteúdo principal */
 .content {
@@ -62,16 +54,20 @@ body {
     margin-top: 56px; /* Para ajustar o conteúdo ao topo da página */
 }
 
+#display-descricao{
+    background: lavender;
+}
+
 /* Responsividade - telas menores */
 @media (max-width: 768px) {
     .sidebar {
         width: 120%;
         height: auto;
-        margin:auto;
-        padding-left:2em;
+        margin: auto;
+        padding-left: 2em;
         position: relative;
         top: 45px;
-        left:-1em;
+        left: -1em;
         display: inline-flex;
     }
 
@@ -80,7 +76,109 @@ body {
     }
 
     .content {
-        margin-left: 0;
-        width: 100%;
+        margin-left: -1em;
+        width: 110%;
     }
+
+    /* BARRA DE PESQUISA */
+    #barra-pesquisa {
+        max-width: 80%;
+        margin: 1em auto;
+    }
+
+    #btn-pesquisar {
+        min-width: 95%;
+        margin: 0.5em auto;
+    }
+}
+
+@media (min-width: 768.01px and max-width: 1080px) {
+    /* BARRA DE PESQUISA */
+    #barra-pesquisa {
+        min-width: 80%;
+        margin: 1em auto;
+    }
+
+    #btn-pesquisar {
+        margin: 0.5em auto;
+    }
+}
+
+@media (min-width: 1080.01px) {
+    /* BARRA DE PESQUISA */
+    #barra-pesquisa {
+        min-width: 85%;
+        margin: auto;
+    }
+
+    #btn-pesquisar {
+        margin: 0;
+    }
+
+    /* Card Display Veículos */
+    .cards-container {
+        display: block;
+    }
+
+    .card {
+        flex: 1; /* Faz com que os cards ocupem espaços iguais */
+        margin: auto; /* Espaçamento horizontal entre os cards */
+        max-height: 400px;
+    }
+
+    /*Carousel*/
+    #carousel{
+        max-width: 20%;
+    }
+
+    #info-veiculo-estoque{
+        position: relative;
+        top: -205px;
+        left: 22%;
+        font-size: 0.6em;
+        font-weight: bold;
+    }
+
+    #bloco-auxiliar{
+        position: relative;
+        top: -480px;
+        left: 75%; 
+    }
+
+    #display-descricao{
+        max-width: 20%;
+        height: 230px;
+        overflow-y: scroll; /* Rolagem apenas no eixo Y (vertical) */
+        overflow-x: hidden; /* Esconde a rolagem horizontal, se não for necessária */
+        font-size: 0.7em;
+        margin: 0;
+        padding: 0;
+    }
+
+    #btn-auxiliares{
+        position: relative;
+        top: -478px;
+        max-width: 60%;
+        font-size: 0.6em;
+    }
+
+    #btn-auxiliares-2{
+        position: relative;
+        top: -580px;
+        left: 60%;
+        font-size: 0.5em;
+    }
+
+    #editar-veiculo{
+        position: relative;
+        left: 10%;
+    }
+
+    .deletar-veiculo{
+        position: relative;
+        left: 25%;
+        top: -2.5em;
+    }
+
+
 }
