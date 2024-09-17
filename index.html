@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nix Autos - Classificados</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+	<!-- FontAwesome CDN -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<!-- FONT GOOGLE API NUNITO -->
+	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="estilo-dashboard.css">
+
+    <!-- JS --->
+    <script type="text/javascript" src="script-dashboard.js"></script>
+</head>
+<body>
+	 <!-- Barra superior com logo -->
+    <nav class="navbar navbar-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="logo-nixautos-v5.png" alt="Logo">
+            </a>
+        </div>
+    </nav>
+
+	<!-- Container -->
+	<div class="container-fluid">
+	    <!-- Menu lateral -->
+	    <nav class="sidebar">
+	    	<a href="#expandir" id="chevron-sidebar">
+	    		<i class="fa-solid fa-circle-chevron-right mr-1"></i>
+	    		<p id="text-chevron-sidebar">Expandir</p>
+	    	</a>
+	        <a href="#home"><i class="fa-solid fa-house mr-2"></i><p>Dashboard</p></a>
+	        <a href="#profile"><i class="fa-solid fa-user mr-2"></i><p>Perfil</p></a>
+	        <a href="#messages"><i class="fa-solid fa-square-envelope mr-2"></i><p>Mensagens</p></a>
+	        <a href="#settings"><i class="fa-solid fa-gear mr-2"></i><p>Configurações</p></a>
+	    </nav>
+
+	    <!-- Conteúdo principal -->
+	    <div class="content row">
+	        <h5>Bem-vindo{{request.user}}</h5>
+	        <hr class="col-12 m-0 p-0">
+	        
+	        <div class="col-12 m-0 p-0">
+	        	<h3 class="mt-1">Gerenciador de Estoque</h3>
+	        	<!-- BARRA DE PESQUISA DO ESTOQUE -->
+				<div id="pesquisa">
+				    <!-- FORMULÁRIO DA PESQUISA-->
+				    <form method="GET" id="form-pesquisa" class="form-inline p-3 border border-danger">
+				        <input type="text" class="form-control col-10 col-lg-10" id="barra-pesquisa">
+				        <span class="btn btn-warning mx-1" id="btn-xmark">
+				        	<i class="fa-solid fa-xmark ml-1" id="icone-xmark"></i>
+				        </span>
+				        <span class="btn btn-primary mx-1" id="btn-pesquisar">
+				            <i class="fa-solid fa-magnifying-glass ml-1" id="icone-pesquisa"></i>
+				        </span>
+				        
+				        <!-- Script da barra de pesquisa -->
+				        <script type="text/javascript">
+				            $(document).ready(function() {
+				                $("#barra-pesquisa").on("keyup", function() {
+				                    var pesquisa = $('#barra-pesquisa').val();
+				                    
+				                    // Verifica o comprimento do texto na barra de pesquisa
+				                    if (pesquisa.length > 0) {
+				                        // Se houver texto, altera para o ícone de 'x' (limpar)
+				                        $("#btn-xmark").show();
+				                        
+				                    } else {
+				                        // Se não houver texto, volta para o ícone de lupa
+				                        $("#btn-xmark").show();;
+				                    }
+				                });
+
+				                $('#icone-pesquisa').on('click',function(){
+				                	//apagar a barra de pesquisa
+				                	$("#barra-pesquisa").val('');
+			                	});
+				            });
+				        </script>
+				    </form>
+				</div>
+
+				<!-- CARDS COM ESTOQUE -->
+	            <div class="col-12 w-100">
+	                <div class="card">
+	                    <div class="card-body">
+	                        <h5 class="card-title">Card 2</h5>
+	                        <p class="card-text">Outra descrição aqui.</p>
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="col-12">
+	                <div class="card">
+	                    <div class="card-body">
+	                        <h5 class="card-title">Card 3</h5>
+	                        <p class="card-text">Mais uma descrição aqui.</p>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	<!-- FINAL CONTAINER -->
+	</div>
+
+    <!-- Bootstrap JS e jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+
+</body>
+</html>
