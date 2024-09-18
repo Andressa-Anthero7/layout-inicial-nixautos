@@ -59,7 +59,7 @@ body {
 }
 
 /* Responsividade - telas menores */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .sidebar {
         width: 120%;
         height: auto;
@@ -67,7 +67,7 @@ body {
         padding-left: 2em;
         position: relative;
         top: 45px;
-        left: -1em;
+        left: -1.5em;
         display: inline-flex;
     }
 
@@ -92,16 +92,20 @@ body {
     }
 }
 
-@media (min-width: 768.01px and max-width: 1080px) {
+
+
+@media (min-width: 768px and max-width: 1080px) {
     /* BARRA DE PESQUISA */
     #barra-pesquisa {
-        min-width: 80%;
+        width: 100%;
         margin: 1em auto;
     }
 
     #btn-pesquisar {
         margin: 0.5em auto;
     }
+
+    
 }
 
 @media (min-width: 1080.01px) {

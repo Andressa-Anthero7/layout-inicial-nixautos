@@ -35,9 +35,9 @@
             <a class="navbar-brand" href="#">
                 <img src="logo-nixautos-v5.png" alt="Logo">
             </a>
-            <button class="btn btn-info ml-auto" id="btn-suporte-tecnico">
+            <a href="https://wa.me/5516993379492?text=OL%C3%81%20SUPORTE%20T%C3%89CNICO%20AQUI" target="_blank" class="btn btn-info ml-auto" id="btn-suporte-tecnico">
             	<i class="fa-solid fa-headset"></i> Suporte Técnico
-        	</button>
+        	</a>
         </div>
     </nav>
 
@@ -46,13 +46,13 @@
 	    <!-- Menu lateral -->
 	    <nav class="sidebar">
 	    	<a href="#expandir" id="chevron-sidebar">
-	    		<i class="fa-solid fa-circle-chevron-right mr-1"></i>
-	    		<p id="text-chevron-sidebar">Expandir</p>
+	    		<i class="fa-solid fa-circle-chevron-right "></i>
+	    		<p id="text-chevron-sidebar" class="txt-btn-sidebar-mobile-expandir ">Expandir</p>
 	    	</a>
-	        <a href="#home"><i class="fa-solid fa-house mr-2"></i><p>Dashboard</p></a>
-	        <a href="#profile"><i class="fa-solid fa-user mr-2"></i><p>Perfil</p></a>
-	        <a href="#messages"><i class="fa-solid fa-square-envelope mr-2"></i><p>Mensagens</p></a>
-	        <a href="#settings"><i class="fa-solid fa-gear mr-2"></i><p>Configurações</p></a>
+	        <a href="#home"><i class="fa-solid fa-house "></i><p class="txt-btn-sidebar-mobile">Dashboard</p></a>
+	        <a href="#profile"><i class="fa-solid fa-desktop "></i><p>Page</p></a>
+	        <a href="#leads"><i class="fa-solid fa-square-envelope "></i><p class="txt-btn-sidebar-mobile-leads">Leads</p></a>
+	        <a href="#settings"><i class="fa-solid fa-gear "></i><p class="txt-btn-sidebar-mobile-config">Configurações</p></a>
 	    </nav>
 
 	    <!-- Conteúdo principal -->
@@ -194,10 +194,10 @@
 	                    	<div id="btn-auxiliares" >
 								<div class="my-3" id="link-acesso-lp">
 			                        <span class='bg-warning rounded  font-weight-bold p-2'>Link da LP</span>
-			                        <div  class="link-lp-{{veiculo.pk}} pt-1  info-veiculo">http://www.laemcasaveiculos.com.br/{{veiculo.pk}}/{{veiculo.slug}}/aaaaaaaaaaaa/3131321Saaaaaaaaaaaaaaa</div>
+			                        <div  class="link-lp-{{veiculo.pk}} pt-1  info-veiculo">http://www.nixautos.com.br/{{veiculo.anunciante}}/{{veiculo.pk}}/{{veiculo.slug}}</div>
 			                        	<!-- BTN COPIAR -->
 		                            <button id="botao-copiar-{{veiculo.pk}}" class="  btn-sm btn-warning rounded botao-copiar " >Copiar Link</button>
-		                            <button href="http://laemcasaveiculos.com.br/{{veiculo.pk}}/{{veiculo.slug}}/" target="_blank" id="botao-acessar-lp" class=" p-1 btn-sm btn-warning rounded m-3 " >Acessar LP</button>
+		                            <button href="http://www.nixautos.com.br/{{veiculo.anunciante}}/{{veiculo.pk}}/{{veiculo.slug}}" target="_blank" id="botao-acessar-lp" class=" p-1 btn-sm btn-warning rounded m-3 " >Acessar LP</button>
 		                            <script>
 			                        document.addEventListener("DOMContentLoaded", function() {
 			                            const botaoCopiar = document.getElementById("botao-copiar-{{veiculo.pk}}");
@@ -242,14 +242,7 @@
 			   
 
 				    </div>
-				    <div class="card p-1 my-2">
-				        <h3>Card 2</h3>
-				        <p>Conteúdo do card 2</p>
-				    </div>
-				    <div class="card p-1 my-2">
-				        <h3>Card 3</h3>
-				        <p>Conteúdo do card 3</p>
-				    </div>
+				    
 				</div>
 	            
 
